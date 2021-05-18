@@ -16,7 +16,7 @@ class Bmi():
         return Bmi
     @staticmethod
     def main():
-        c = Bmi(int(input('몸무게를 입력해주세요\n')), int(input('키를 입력해주세요\n')))
+        c = Bmi(int(input('몸무게를 입력해주세요(kg)\n')), int(input('키를 입력해주세요(cm)\n')))
         print(f'BMI = {c.kg} kg / {c.msq} m^2 ')
         print(f'당신의 BMI는 {c.get_bmi()} 입니다')
 
