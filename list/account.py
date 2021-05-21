@@ -1,13 +1,26 @@
 import random
+
 class Account(object):
+
     def __init__(self, name, deposit):
-        self.bank = 'SC은행'
+        self.BANK = 'SC은행'
         self.name = name
         rls = list(range(10))
-        self.code = f'{random.sample(rls,3)}-{random.sample(rls,2)}-{random.sample(rls,6)}'
+        self.code = self.create_acc_numb()
         self.deposit = deposit
     def get_account(self):
-        return f'은행 : {self.bank}\n예금주 : {self.name}\n계좌번호 : {self.code}\n잔액 : {self.deposit}'
+        return f'은행 : {self.BANK}\n예금주 : {self.name}\n계좌번호 : {self.code}\n잔액 : {self.deposit}'
+    def create_acc_numb(self):
+        ls = []
+        for i in range(3):
+            ls.append(str(random.randint(0,9)))
+        ls.append('-')
+        for i in range(2):
+            ls.append(str(random.randint(0,9)))
+        ls.append('-')
+        for i in range(6):
+            ls.append(str(random.randint(0, 9)))
+        return "".join(ls)
 
     @staticmethod
     def main():
