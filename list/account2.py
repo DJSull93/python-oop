@@ -10,9 +10,7 @@ class Account(object):
 
     @staticmethod
     def create_acc_numb():
-        ls = []
-        for i in range(3):
-            ls.append(str(random.randint(0,9)))
+        ls = [str(random.randint(0, 9)) for i in range(3)]
         ls.append('-')
         for i in range(2):
             ls.append(str(random.randint(0,9)))
